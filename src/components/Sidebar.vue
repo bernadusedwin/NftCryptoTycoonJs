@@ -212,6 +212,11 @@
             ><i class="fas fa-tv opacity-75 mr-2 text-sm"></i> Bridge2</a
             >
           </li>
+          <li class="items-center">
+            <a v-bind:class="inquiryColorMenu('intro')" href="/intro"
+            ><i class="fas fa-tv opacity-75 mr-2 text-sm"></i> intro</a
+            >
+          </li>
           <li class="items-center" v-if="isDevMode">
             <a v-bind:class="inquiryColorMenu('info2')" href="/info2"
             ><i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>

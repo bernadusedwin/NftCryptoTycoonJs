@@ -1,24 +1,13 @@
-# student
+# Crypto Tycoon Front-End
 
-## Project setup
-```
-yarn install
-```
+## What is this?
+NFT P2E similar to etherorc or ethernalelves
+## Motivation
+learn and explore solidity and game mechanic P2E games
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Links
+front-end \
+https://github.com/edwinbernadus/NftCryptoTycoonJs
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+demo \
+https://inspiring-fox-971f55.netlify.app/

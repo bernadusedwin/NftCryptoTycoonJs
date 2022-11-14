@@ -6,6 +6,7 @@ import Info2 from './views/Debug.vue'
 import Nft2 from './views/Nft2.vue'
 import Bridge from './views/Bridge.vue'
 import Bridge2 from './views/Bridge2.vue'
+import Intro from './views/Intro.vue'
 
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -38,6 +39,10 @@ const routes = [{
     {
         path: "/Bridge2",
         component: Bridge2,
+    },
+    {
+        path: "/Intro",
+        component: Intro,
     },
 
 

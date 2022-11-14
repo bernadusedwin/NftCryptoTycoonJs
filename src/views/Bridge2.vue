@@ -408,9 +408,10 @@ export default defineComponent({
 
 
       if (this.is_master_network == false) {
-        let v1 = await NewTrancodeMintInquiry.listOnMatic();
+        let v1 : any[] = await NewTrancodeMintInquiry.listOnMatic();
         console.log("v1", v1)
         this.items = v1;
+        this.items = v1.filter(x => x.owner.toLowerCase() == this.current_address.toLowerCase());
       }
       else {
         this.items = [];

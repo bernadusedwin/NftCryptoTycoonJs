@@ -1,19 +1,19 @@
 class newAbiProdService {
 
     getMasterContractBridgeOnEth() {
-        return "0xf853DBC2C192730FA67304E33d1Ef2EDaf163Efe";
+        return "0x795dE0B33Cd3fE50b3F785017E0542c33Ec1E738";
     }
 
     getSlaveContractBridgeOnMatic() {
-        return "0xD13Adf9486ccCd3D9d881611c4ca9Ffb7621103A";
+        return "0x8A93b8797421e6a54900031A4ee36a4FF32Fc5a7";
     }
 
     getNftContractOnEth() {
-        return "0x6f660A2452bCdaAC718Df4e4a5d62fA023167F8D";
+        return "0x90b7E70215A1577E6CD86c41Bdf4a0980c4dE6c2";
     }
 
     getNftContractOnMatic() {
-        return "0x781E322723E6fE7EE4c2566C8b9441A8ecE930d7";
+        return "0x24484162765D24557707Fd4d0f6fd1876db03677";
     }
 
 

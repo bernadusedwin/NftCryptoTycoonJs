@@ -34,6 +34,9 @@
     >
       Switch Network to MATIC
     </button>
+    <div class="text-white">
+      {{current_version}}
+    </div>
 
     <h5 v-if="debugMode">
       <br/>
@@ -79,6 +82,7 @@ const WalletConnectProvider = window.WalletConnectProvider.default;
 const Fortmatic = window.Fortmatic;
 import abiService from "../library/abi_service";
 import wallet_service from "@/library/new_wallet_service";
+import global_param from "@/library/global_param";
 
 export default defineComponent({
   props: {
@@ -88,6 +92,7 @@ export default defineComponent({
   },
   data() {
     return {
+      current_version : "no_data",
       current_chain_id: "-1",
       current_chain_id_display: "-1",
       // status: "Connect",
@@ -109,6 +114,7 @@ export default defineComponent({
   },
   mounted: async function () {
 
+    this.current_version = global_param.getVersion();
 
     window.ethereum.on("accountsChanged", function (accounts: any) {
       let loginVue = window.loginVue;

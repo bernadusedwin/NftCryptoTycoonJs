@@ -120,8 +120,8 @@ class newTrancodeBridgeInquiry {
 
         const address2 = this.formatAddress(address);
         const topic1 = address2;
-        // const url = `https://api-testnet.polygonscan.com/api?module=logs&action=getLogs&address=${contractAddress}&&apikey=${apiKey}&topic0=${topic0}&topic1=${topic1}`
-        const url = `https://api-testnet.polygonscan.com/api?module=logs&action=getLogs&address=${contractAddress}&&apikey=${apiKey}&topic0=${topic0}`
+        const url = `https://api-testnet.polygonscan.com/api?module=logs&action=getLogs&address=${contractAddress}&&apikey=${apiKey}&topic0=${topic0}&topic1=${topic1}`
+        // const url = `https://api-testnet.polygonscan.com/api?module=logs&action=getLogs&address=${contractAddress}&&apikey=${apiKey}&topic0=${topic0}`
         console.log("url", url)
 
         const response = await fetch(url);

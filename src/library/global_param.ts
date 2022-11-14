@@ -5,7 +5,7 @@ class globalParam {
     }
 
     getVersion(){
-        return "ver 27";
+        return "ver 30";
     }
 
 

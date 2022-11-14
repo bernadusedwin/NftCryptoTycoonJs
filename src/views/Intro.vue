@@ -7,10 +7,10 @@
       <div class="relative bg-blue-600 md:pt-32 pb-32 pt-12">
         <div class="px-4 md:px-10 mx-auto w-full">
           <div>
-            <login-component
-                title="hello world"
-                :callbackMetamask="receiveMetamask"
-            ></login-component>
+<!--            <login-component-->
+<!--                title="hello world"-->
+<!--                :callbackMetamask="receiveMetamask"-->
+<!--            ></login-component>-->
 
 
             <div class="text-white">
@@ -60,146 +60,19 @@
               <div class="flex flex-wrap items-center">
                 <div
                     class="relative w-full px-4 max-w-full flex-grow flex-1"
-                    v-if="is_ready == false"
-                >
-                  <div>Connect first</div>
-                </div>
-                <div
-                    class="relative w-full px-4 max-w-full flex-grow flex-1"
                     v-if="is_ready"
                 >
 
 
-                  <div>Item List (ETH)</div>
-
-                  <div v-if="is_master_network == false" class="text-red-600">switch to eth network to see result</div>
+                  <div>Crypto Tycoon</div>
                   <br/>
-
-                  <table class="border-collapse border border-amber-600 w-full">
-                    <thead>
-                    <tr>
-                      <th class="border border-amber-600 ...">TokenId</th>
-                      <th class="border border-amber-600 ...">IsActive</th>
-                      <th class="border border-amber-600 ...">Owner</th>
-                      <th class="border border-amber-600 ...">Level</th>
-
-
-                      <th class="border border-amber-600 ...">Button</th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <template v-for="item in items" :key="item">
-                      <tr class="text-center">
-                        <td class="border border-amber-600 ...">{{ item.token_id }}</td>
-                        <td class="border border-amber-600 ...">{{ item.is_active }}</td>
-                        <td class="border border-amber-600 ...">{{ item.owner }}</td>
-                        <td class="border border-amber-600 ...">{{ item.level }}</td>
-
-
-                        <td class="border border-amber-600 ...">
-
-                          <button
-                              v-if="is_ready == true && item.is_active == true"
-                              class="text-white p-2 bg-red-400"
-                              v-on:click="bridgeItem(item)"
-                          >
-                            BRIDGE
-                          </button>
-
-                        </td>
-
-
-                      </tr>
-                    </template>
-                    </tbody>
-                  </table>
-
-                  <br/>
-                  <br/>
-                  <hr/>
-
-                  <br/>
-
-                  <br/>
-
-                  <div>Departure</div>
-                  <br/>
-
-                  <table class="border-collapse border border-amber-600 w-full">
-                    <thead>
-                    <tr>
-
-                      <th class="border border-amber-600 ...">NftId</th>
-                      <th class="border border-amber-600 ...">Timestamp</th>
-                      <th class="border border-amber-600 ...">Ticket</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <template v-for="item in items_departure" :key="item">
-                      <tr class="text-center">
-                        <td class="border border-amber-600 ...">{{ item.token_id }}</td>
-                        <td class="border border-amber-600 ...">{{ item.timeStamp }}</td>
-                        <td class="border border-amber-600 ...">
-                          {{ item.guid }}
-                          <br/>
-                          TxHash: {{ item.transactionHash }}
-                        </td>
-                      </tr>
-                    </template>
-                    </tbody>
-                  </table>
-
-
-                  <br/>
-
-
-                  <div>Arrival</div>
-                  <br/>
-
-                  <table class="border-collapse border border-amber-600 w-full">
-                    <thead>
-                    <tr>
-                      <th class="border border-amber-600 ...">NftId</th>
-                      <th class="border border-amber-600 ...">Timestamp</th>
-                      <th class="border border-amber-600 ...">Ticket</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <template v-for="item in items_arrival" :key="item">
-                      <tr class="text-center">
-                        <td class="border border-amber-600 ...">{{ item.token_id }}</td>
-                        <td class="border border-amber-600 ...">{{ item.timeStamp }}</td>
-                        <td class="border border-amber-600 ...">
-                          {{ item.guid }}
-                          <br/>
-                          TxHash: {{ item.transactionHash }}
-                        </td>
-                      </tr>
-                    </template>
-                    </tbody>
-                  </table>
-
-
-                  <br/>
-                  <br/>
-
-
-                  <br/>
-                  <br/>
-                  <hr/>
-
-
-                  <div v-if="is_loading">Loading .....</div>
-                  <div v-if="is_loading">
-                    If the newly minted item does not appear. try again after 2
-                    min
+                  <div>Demo NFT P2E inspired from</div>
+                  <div>
+                    <a href="http://www.google.com" style="color:red">etherorc </a>
+                    or
+                    <a href="http://www.google.com" style="color:red">ethernalelves </a>
                   </div>
-                  <div v-if="loading_counter >= 0">
-                    {{ loading_counter }} of {{ total }}
-                  </div>
+                  <br/>
                 </div>
               </div>
             </div>
@@ -248,7 +121,7 @@ export default defineComponent({
     NavbarComponent,
     SidebarComponent,
     AboutComponent,
-    LoginComponent,
+    // LoginComponent,
     // ModalGeneric,
     // ModalSell,
     // ModalStacking,
@@ -268,7 +141,7 @@ export default defineComponent({
       contractCargo: "no_data",
       total: 10000,
       loading_counter: -1,
-      is_ready: false,
+      is_ready: true,
       is_loading: false,
       is_master_network: false,
       // totalNftFromPlayer: "no_data",
@@ -299,19 +172,12 @@ export default defineComponent({
     this.contractCargo = abi_service.getCargoContract();
 
     vm = this;
-    // window.vm = this;
-    // this.runTimer();
-    // }
 
-
-    // console.log("set up chain changed")
-    window.ethereum.on("chainChanged", function (chainId: number) {
-      // console.log("chain changed detected")
-      if (vm != null) {
-        vm.reloadData();
-      }
-
-    });
+    // window.ethereum.on("chainChanged", function (chainId: number) {
+    //   if (vm != null) {
+    //     vm.reloadData();
+    //   }
+    // });
   },
   methods: {
     receiveMetamask: async function (address: string) {
